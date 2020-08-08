@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NorthernLightsHospitalModelStoreContainer" CdmEntityContainer="NorthernLightsHospitalEntities">
+    <EntitySetMapping Name="Assurances">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.Assurance">
+        <MappingFragment StoreEntitySet="Assurance">
+          <ScalarProperty Name="IDassurance" ColumnName="IDassurance" />
+          <ScalarProperty Name="NomCompagnie" ColumnName="NomCompagnie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAdmissions">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.tblAdmission">
+        <MappingFragment StoreEntitySet="tblAdmission">
+          <ScalarProperty Name="IDadmission" ColumnName="IDadmission" />
+          <ScalarProperty Name="NAS" ColumnName="NAS" />
+          <ScalarProperty Name="dateAdmis" ColumnName="dateAdmis" />
+          <ScalarProperty Name="IDmedecin" ColumnName="IDmedecin" />
+          <ScalarProperty Name="Lit" ColumnName="Lit" />
+          <ScalarProperty Name="Chirugie" ColumnName="Chirugie" />
+          <ScalarProperty Name="dateChirugie" ColumnName="dateChirugie" />
+          <ScalarProperty Name="dateConge" ColumnName="dateConge" />
+          <ScalarProperty Name="tv" ColumnName="tv" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDepts">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.tblDept">
+        <MappingFragment StoreEntitySet="tblDept">
+          <ScalarProperty Name="IDdept" ColumnName="IDdept" />
+          <ScalarProperty Name="NomDept" ColumnName="NomDept" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLits">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.tblLit">
+        <MappingFragment StoreEntitySet="tblLit">
+          <ScalarProperty Name="Lit" ColumnName="Lit" />
+          <ScalarProperty Name="Occupe" ColumnName="Occupe" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IDdept" ColumnName="IDdept" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLitTypes">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.tblLitType">
+        <MappingFragment StoreEntitySet="tblLitType">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMedecins">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.tblMedecin">
+        <MappingFragment StoreEntitySet="tblMedecins">
+          <ScalarProperty Name="IDmedecin" ColumnName="IDmedecin" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Specialite" ColumnName="Specialite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblParents">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.tblParent">
+        <MappingFragment StoreEntitySet="tblParents">
+          <ScalarProperty Name="RefParent" ColumnName="RefParent" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPatients">
+      <EntityTypeMapping TypeName="NorthernLightsHospitalModel.tblPatient">
+        <MappingFragment StoreEntitySet="tblPatients">
+          <ScalarProperty Name="NAS" ColumnName="NAS" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="IDassurance" ColumnName="IDassurance" />
+          <ScalarProperty Name="RefParent" ColumnName="RefParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

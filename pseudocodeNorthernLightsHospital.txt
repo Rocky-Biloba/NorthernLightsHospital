@@ -1,0 +1,76 @@
+//*Interface colours
+deep forest green #083825
+#FF23815C
+light forest green #046B42
+#FF38B080
+light hunter green #058552
+deep hunter green #03452A
+hunter teal #029C8A
+green slime #FFB3FF45
+light ocean blue #017B91
+#FFB4EBF5
+northern light purple #691385
+#FFF4D2FF
+ochre #856213
+bone #FDF3D1
+creamsicle orange #FFFBDBBB
+
+//*Datatypes
+Assurance (Insurance)
+ IDassurance 	int		int
+ NomCompagnie	nchar(30)	string
+
+tblAdmission
+ IDadmission	int		int
+ NAS		nchar(9)	int (NSS) 
+ dateAdmis	datetime2(7)	date
+ IDmedecin	int		int
+ Lit		int		int	
+ Chirugie	nchar(20)	!bool - why?
+ dateChirugie	datetime2(7)	date
+ dateConge	datetime2(7)	date
+ tv		bit		bool
+ telephone	bit		bool
+
+tblDept 
+ IDdept		int		int
+ NomDept	nchar(30)	String
+
+tblLit
+ Lit		int		int	
+ Occupe		bit		bool
+ Type		int		int
+ IDdept		int		int
+
+tblLitType
+ Type		int		int
+ Descript	nchar(10)	string
+
+tblMedecins
+ IDmedecin	int		int
+ Nom		nchar(20)	string
+ Prenom		nchar(20)	string
+ Specialite	nchar(20)	string
+
+tblParents	
+ RefParent	int		int
+ Nom		nchar(20)	string	
+ Prenom		nchar(20)	string
+ Adresse	nchar(20)	string
+ Ville		nchar(20)	string
+ Province	nchar(20)	string
+ CP		nchar(6)	string
+ Tel		int		int
+
+tblPatients
+ NAS		int		int
+ DOB		datetime2(7)	date	(format: YYYY-MM-DD)
+ Nom		nchar(20)	string
+ Prenom		nchar(20)	string
+ Adresse	nchar(30)	string
+ Ville		nchar(20)	string
+ Province	nchar(20)	string
+ CP		nchar(6)	string
+ Tel		nchar(10)	string
+ IDassurance	int		int
+ RefParent	int		int 

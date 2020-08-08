@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NorthernLightsHospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Assurance">
+    <Key>
+      <PropertyRef Name="IDassurance" />
+    </Key>
+    <Property Name="IDassurance" Type="int" Nullable="false" />
+    <Property Name="NomCompagnie" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblAdmission">
+    <Key>
+      <PropertyRef Name="IDadmission" />
+    </Key>
+    <Property Name="IDadmission" Type="int" Nullable="false" />
+    <Property Name="NAS" Type="int" />
+    <Property Name="dateAdmis" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="IDmedecin" Type="int" Nullable="false" />
+    <Property Name="Lit" Type="int" Nullable="false" />
+    <Property Name="Chirugie" Type="nchar" MaxLength="20" />
+    <Property Name="dateChirugie" Type="datetime2" Precision="7" />
+    <Property Name="dateConge" Type="datetime2" Precision="7" />
+    <Property Name="tv" Type="bit" Nullable="false" />
+    <Property Name="telephone" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblDept">
+    <Key>
+      <PropertyRef Name="IDdept" />
+    </Key>
+    <Property Name="IDdept" Type="int" Nullable="false" />
+    <Property Name="NomDept" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLit">
+    <Key>
+      <PropertyRef Name="Lit" />
+    </Key>
+    <Property Name="Lit" Type="int" Nullable="false" />
+    <Property Name="Occupe" Type="bit" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="IDdept" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLitType">
+    <Key>
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Descript" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblMedecins">
+    <Key>
+      <PropertyRef Name="IDmedecin" />
+    </Key>
+    <Property Name="IDmedecin" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Specialite" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblParents">
+    <Key>
+      <PropertyRef Name="RefParent" />
+    </Key>
+    <Property Name="RefParent" Type="int" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="20" />
+    <Property Name="Prenom" Type="nchar" MaxLength="20" />
+    <Property Name="Adresse" Type="nchar" MaxLength="20" />
+    <Property Name="Ville" Type="nchar" MaxLength="20" />
+    <Property Name="Province" Type="nchar" MaxLength="20" />
+    <Property Name="CP" Type="nchar" MaxLength="6" />
+    <Property Name="Tel" Type="int" />
+  </EntityType>
+  <EntityType Name="tblPatients">
+    <Key>
+      <PropertyRef Name="NAS" />
+    </Key>
+    <Property Name="NAS" Type="int" Nullable="false" />
+    <Property Name="DOB" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Adresse" Type="nchar" MaxLength="30" />
+    <Property Name="Ville" Type="nchar" MaxLength="20" />
+    <Property Name="Province" Type="nchar" MaxLength="20" />
+    <Property Name="CP" Type="nchar" MaxLength="6" />
+    <Property Name="Tel" Type="nchar" MaxLength="11" />
+    <Property Name="IDassurance" Type="int" />
+    <Property Name="RefParent" Type="int" />
+  </EntityType>
+  <Association Name="FK_AdmissionLit">
+    <End Role="tblLit" Type="Self.tblLit" Multiplicity="1" />
+    <End Role="tblAdmission" Type="Self.tblAdmission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLit">
+        <PropertyRef Name="Lit" />
+      </Principal>
+      <Dependent Role="tblAdmission">
+        <PropertyRef Name="Lit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdmissionMedecins">
+    <End Role="tblMedecins" Type="Self.tblMedecins" Multiplicity="1" />
+    <End Role="tblAdmission" Type="Self.tblAdmission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMedecins">
+        <PropertyRef Name="IDmedecin" />
+      </Principal>
+      <Dependent Role="tblAdmission">
+        <PropertyRef Name="IDmedecin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdmissionPatients">
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="0..1" />
+    <End Role="tblAdmission" Type="Self.tblAdmission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatients">
+        <PropertyRef Name="NAS" />
+      </Principal>
+      <Dependent Role="tblAdmission">
+        <PropertyRef Name="NAS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LitDept">
+    <End Role="tblDept" Type="Self.tblDept" Multiplicity="1" />
+    <End Role="tblLit" Type="Self.tblLit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDept">
+        <PropertyRef Name="IDdept" />
+      </Principal>
+      <Dependent Role="tblLit">
+        <PropertyRef Name="IDdept" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LitLitType">
+    <End Role="tblLitType" Type="Self.tblLitType" Multiplicity="1" />
+    <End Role="tblLit" Type="Self.tblLit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLitType">
+        <PropertyRef Name="Type" />
+      </Principal>
+      <Dependent Role="tblLit">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PatientsParents">
+    <End Role="tblParents" Type="Self.tblParents" Multiplicity="0..1" />
+    <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblParents">
+        <PropertyRef Name="RefParent" />
+      </Principal>
+      <Dependent Role="tblPatients">
+        <PropertyRef Name="RefParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NorthernLightsHospitalModelStoreContainer">
+    <EntitySet Name="Assurance" EntityType="Self.Assurance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAdmission" EntityType="Self.tblAdmission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDept" EntityType="Self.tblDept" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLit" EntityType="Self.tblLit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLitType" EntityType="Self.tblLitType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblMedecins" EntityType="Self.tblMedecins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblParents" EntityType="Self.tblParents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPatients" EntityType="Self.tblPatients" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AdmissionLit" Association="Self.FK_AdmissionLit">
+      <End Role="tblLit" EntitySet="tblLit" />
+      <End Role="tblAdmission" EntitySet="tblAdmission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdmissionMedecins" Association="Self.FK_AdmissionMedecins">
+      <End Role="tblMedecins" EntitySet="tblMedecins" />
+      <End Role="tblAdmission" EntitySet="tblAdmission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdmissionPatients" Association="Self.FK_AdmissionPatients">
+      <End Role="tblPatients" EntitySet="tblPatients" />
+      <End Role="tblAdmission" EntitySet="tblAdmission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LitDept" Association="Self.FK_LitDept">
+      <End Role="tblDept" EntitySet="tblDept" />
+      <End Role="tblLit" EntitySet="tblLit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LitLitType" Association="Self.FK_LitLitType">
+      <End Role="tblLitType" EntitySet="tblLitType" />
+      <End Role="tblLit" EntitySet="tblLit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PatientsParents" Association="Self.FK_PatientsParents">
+      <End Role="tblParents" EntitySet="tblParents" />
+      <End Role="tblPatients" EntitySet="tblPatients" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

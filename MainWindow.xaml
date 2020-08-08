@@ -1,0 +1,87 @@
+﻿<Window x:Class="NorthernLightsHospital.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NorthernLightsHospital"
+        mc:Ignorable="d"
+        Title="Northern Lights Hospital - fenêtre préposé" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF4D2FF" Offset="0"/>
+                <GradientStop Color="#FF23815C" Offset="1"/>
+                <GradientStop Color="#FF38B080" Offset="0.863"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!--ID Préposé-->
+        <Label x:Name="lb_preposeID" Content="Préposé : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF083825"/>
+        <TextBlock x:Name="tb_preposeID" HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF083825"/>
+        <!--TITRE-->
+        <Label x:Name="lb_titreAjouterPatient" Content="Ajouter un patient" HorizontalAlignment="Left" Margin="338,10,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
+            <Label.Effect>
+                <DropShadowEffect ShadowDepth="2" Color="White"/>
+            </Label.Effect>
+        </Label>
+        <!--info patient-->
+        <GroupBox x:Name="gbox_coordPatient" Header="Info Patient" HorizontalAlignment="Left" Height="352" VerticalAlignment="Top" Width="297" Margin="49,39,0,0" BorderBrush="#FFB3FF45" Foreground="#FF083825">
+            <Grid HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="287" Margin="0,0,-2,-2">
+                <Label x:Name="lb_prenom" Content="Prénom :" HorizontalAlignment="Left" Margin="56,19,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_prenom" HorizontalAlignment="Left" Height="23" Margin="118,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+                <Label x:Name="lb_nom" Content="Nom :" HorizontalAlignment="Left" Margin="71,47,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_nom" HorizontalAlignment="Left" Height="23" Margin="118,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+                <Label x:Name="lb_NAS" Content="NAS :" HorizontalAlignment="Left" Margin="74,78,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_NAS" HorizontalAlignment="Left" Height="23" Margin="118,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90" TextChanged="tbox_NAS_TextChanged"/>
+                <Label x:Name="lb_DOB" Content="DOB :" HorizontalAlignment="Left" Margin="74,103,0,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="dp_DOB" HorizontalAlignment="Left" Margin="119,104,0,0" VerticalAlignment="Top" Width="149"/>
+                <Label x:Name="lb_IDassurance" Content="ID Assurance :" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_IDassurance" HorizontalAlignment="Left" Height="23" Margin="99,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="41"/>
+                <Button x:Name="btn_refParent" Content="Ajouter un réf. parent" HorizontalAlignment="Left" Margin="160,146,0,0" VerticalAlignment="Top" Width="108" Height="23" FontSize="10" Background="#FFFBDBBB" Click="btn_refParent_Click"/>
+                <Label x:Name="lb_adresse" Content="Adresse :" HorizontalAlignment="Left" Margin="55,180,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_adresse" HorizontalAlignment="Left" Height="23" Margin="118,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+                <Label x:Name="lb_ville" Content="Ville :" HorizontalAlignment="Left" Margin="75,208,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_ville" HorizontalAlignment="Left" Height="23" Margin="118,211,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+                <Label x:Name="lb_prov" Content="Province :" HorizontalAlignment="Left" Margin="52,236,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_prov" HorizontalAlignment="Left" Height="23" Margin="118,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+                <Label x:Name="lb_CP" Content="Code postale :" HorizontalAlignment="Left" Margin="27,264,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_CP" HorizontalAlignment="Left" Height="23" Margin="118,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70"/>
+                <Label x:Name="lb_tel" Content="Téléphone :" HorizontalAlignment="Left" Margin="43,292,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_tel" HorizontalAlignment="Left" Height="23" Margin="118,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+            </Grid>
+        </GroupBox>
+        <!--détails admission-->
+        <GroupBox x:Name="gbox_admissionPatient" Header="Détails admission" HorizontalAlignment="Left" Height="352" VerticalAlignment="Top" Width="304" Margin="440,39,0,0" BorderBrush="#FFB3FF45" Foreground="#FF083825">
+            <Grid HorizontalAlignment="Left" Margin="0,-2,-2,1" Width="342">
+                <Label x:Name="lb_NAS2" Content="NAS :" HorizontalAlignment="Left" Margin="71,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.797,0.963"/>
+                <TextBlock x:Name="tb_NAS2" HorizontalAlignment="Left" Margin="115,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF856213"/>
+                <Label x:Name="lb_IDadmission" Content="ID Admission :" HorizontalAlignment="Left" Margin="25,33,0,0" VerticalAlignment="Top"/>
+                <TextBlock x:Name="tb_IDadmission" HorizontalAlignment="Left" Margin="116,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF083825"/>
+                <Label x:Name="lb_dateAdmis" Content="Date d'admission :" HorizontalAlignment="Left" Margin="4,59,0,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="dp_dateAdmis" HorizontalAlignment="Left" Margin="111,59,0,0" VerticalAlignment="Top" Width="149"/>
+                <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="32,84,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="113,88,0,0" VerticalAlignment="Top" Width="60"  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin" SelectionChanged="cb_IDmedecin_SelectionChanged"/>
+                <TextBlock x:Name="tb_nomSpecMedecin" HorizontalAlignment="Left" Margin="79,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="181" Foreground="#FF083825"/>
+                <Label x:Name="lb_dept" Content="Département :" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.096,-0.922"/>
+                <ComboBox x:Name="cb_dept" HorizontalAlignment="Left" Margin="116,138,0,0" VerticalAlignment="Top" Width="148" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="NomDept"/>
+                <!--Choix lit-->
+                <Label x:Name="lb_typeDeLit" Content="Type de lit :" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.59,2.132"/>
+                <RadioButton x:Name="rb_standard" Content="Standard" HorizontalAlignment="Left" Margin="85,165,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rb_semiprive" Content="Semi-privé" HorizontalAlignment="Left" Margin="85,181,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rb_prive" Content="Privé" HorizontalAlignment="Left" Margin="85,198,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rb_tv" Content="TV chambre" HorizontalAlignment="Left" Margin="181,175,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="rb_telChambre" Content="Tél. chambre" HorizontalAlignment="Left" Margin="181,196,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lb_lit" Content="Lit :" HorizontalAlignment="Left" Margin="79,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.59,2.132"/>
+                <TextBlock x:Name="tb_lit" HorizontalAlignment="Left" Margin="116,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" FontWeight="Bold" Width="57" Foreground="#FF856213" Height="20"/>
+                <Label x:Name="lb_chirugie" Content="Chirugie :" HorizontalAlignment="Left" Margin="48,243,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_chirugie" HorizontalAlignment="Left" Height="23" Margin="114,246,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Background="#FFFBDBBB"/>
+                <Label x:Name="lb_dateChirugie" Content="Date chirugie :" HorizontalAlignment="Left" Margin="24,272,0,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="dp_dateChirugie" HorizontalAlignment="Left" Margin="115,274,0,0" VerticalAlignment="Top" Width="149" Background="#FFFBDBBB"/>
+                <Label x:Name="lb_dateConge" Content="Date congé :" HorizontalAlignment="Left" Margin="33,302,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.443,2.139"/>
+                <DatePicker x:Name="dp_dateConge" HorizontalAlignment="Left" Margin="115,304,0,0" VerticalAlignment="Top" Width="149" Background="#FFB4EBF5"/>
+            </Grid>
+        </GroupBox>
+        <!--Boutons-->
+        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="365,158,0,0" VerticalAlignment="Top" Width="56" Background="#FFF4D2FF" RenderTransformOrigin="0.5,0.5" Height="41" Click="btn_ajouter_Click"/>
+        <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="364,210,0,0" VerticalAlignment="Top" Width="57" Background="#FFD2D4FF" RenderTransformOrigin="0.5,0.5" Height="41" Click="btn_annuler_Click"/>
+    </Grid>
+</Window>
