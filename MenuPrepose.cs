@@ -19,12 +19,12 @@ namespace NorthernLightsHospital
     /// </summary>
     public partial class MenuPrepose : Window
     {
-        public static NorthernLightsHospitalEntities myBDD;
+        
 
         public MenuPrepose()
         {
             InitializeComponent();
-            myBDD = new NorthernLightsHospitalEntities();
+           
         }
 
         //AJOUTER

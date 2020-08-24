@@ -27,7 +27,7 @@ namespace NorthernLightsHospital
         public string Ville { get; set; }
         public string Province { get; set; }
         public string CP { get; set; }
-        public Nullable<int> Tel { get; set; }
+        public string Tel { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblPatient> tblPatients { get; set; }

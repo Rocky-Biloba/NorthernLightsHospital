@@ -19,10 +19,12 @@ namespace NorthernLightsHospital
     /// </summary>
     public partial class Login : Window
     {
+        public static NorthernLightsHospitalEntities myBDD;
         int essai = 0;
         public Login()
         {
             InitializeComponent();
+            myBDD = new NorthernLightsHospitalEntities();
         }
 
         private void btn_OK_Click(object sender, RoutedEventArgs e)
@@ -31,10 +33,20 @@ namespace NorthernLightsHospital
             string pass = pbox_mdp.Password;
             if (!String.IsNullOrEmpty(user) && !String.IsNullOrEmpty(pass))
             {
-                if (user == "admin" && pass == "admin")
+                if (user == "prepose" && pass == "prepose")
                 {
                     MenuPrepose main = new MenuPrepose();
-                    //MainWindow main = new MainWindow();
+                    main.ShowDialog();
+                }
+                if (user == "admin" && pass == "admin")
+                {
+                        //changer MenuPrepose à MenuAdmin
+                    MenuPrepose main = new MenuPrepose();
+                    main.ShowDialog();
+                }
+                if (user == "medecin" && pass == "medecin")
+                {
+                    MenuPrepose main = new MenuPrepose();
                     main.ShowDialog();
                 }
                 else if (essai == 2)

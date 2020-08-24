@@ -28,7 +28,7 @@ namespace NorthernLightsHospital
         public string Ville { get; set; }
         public string Province { get; set; }
         public string CP { get; set; }
-        public Nullable<int> Tel { get; set; }
+        public string Tel { get; set; }
         public Nullable<int> IDassurance { get; set; }
         public Nullable<int> RefParent { get; set; }
     

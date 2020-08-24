@@ -19,11 +19,11 @@ namespace NorthernLightsHospital
         public System.DateTime dateAdmis { get; set; }
         public int IDmedecin { get; set; }
         public int Lit { get; set; }
-        public string Chirugie { get; set; }
+        public Nullable<bool> Chirugie { get; set; }
         public Nullable<System.DateTime> dateChirugie { get; set; }
         public Nullable<System.DateTime> dateConge { get; set; }
-        public bool tv { get; set; }
-        public bool telephone { get; set; }
+        public Nullable<bool> tv { get; set; }
+        public Nullable<bool> telephone { get; set; }
     
         public virtual tblLit tblLit { get; set; }
         public virtual tblMedecin tblMedecin { get; set; }

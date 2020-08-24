@@ -21,16 +21,16 @@
     <Key>
       <PropertyRef Name="IDadmission" />
     </Key>
-    <Property Name="IDadmission" Type="int" Nullable="false" />
+    <Property Name="IDadmission" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NAS" Type="int" />
     <Property Name="dateAdmis" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="IDmedecin" Type="int" Nullable="false" />
     <Property Name="Lit" Type="int" Nullable="false" />
-    <Property Name="Chirugie" Type="nchar" MaxLength="20" />
+    <Property Name="Chirugie" Type="bit" />
     <Property Name="dateChirugie" Type="datetime2" Precision="7" />
     <Property Name="dateConge" Type="datetime2" Precision="7" />
-    <Property Name="tv" Type="bit" Nullable="false" />
-    <Property Name="telephone" Type="bit" Nullable="false" />
+    <Property Name="tv" Type="bit" />
+    <Property Name="telephone" Type="bit" />
   </EntityType>
   <EntityType Name="tblDept">
     <Key>
@@ -68,14 +68,14 @@
     <Key>
       <PropertyRef Name="RefParent" />
     </Key>
-    <Property Name="RefParent" Type="int" Nullable="false" />
+    <Property Name="RefParent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nom" Type="nchar" MaxLength="20" />
     <Property Name="Prenom" Type="nchar" MaxLength="20" />
     <Property Name="Adresse" Type="nchar" MaxLength="20" />
     <Property Name="Ville" Type="nchar" MaxLength="20" />
     <Property Name="Province" Type="nchar" MaxLength="20" />
     <Property Name="CP" Type="nchar" MaxLength="6" />
-    <Property Name="Tel" Type="int" />
+    <Property Name="Tel" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="tblPatients">
     <Key>
@@ -89,7 +89,7 @@
     <Property Name="Ville" Type="nchar" MaxLength="20" />
     <Property Name="Province" Type="nchar" MaxLength="20" />
     <Property Name="CP" Type="nchar" MaxLength="6" />
-    <Property Name="Tel" Type="nchar" MaxLength="11" />
+    <Property Name="Tel" Type="nchar" MaxLength="10" />
     <Property Name="IDassurance" Type="int" />
     <Property Name="RefParent" Type="int" />
   </EntityType>
