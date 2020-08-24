@@ -35,7 +35,7 @@ namespace NorthernLightsHospital
             {
                 if (user == "prepose" && pass == "prepose")
                 {
-                    MenuPrepose main = new MenuPrepose();
+                    MainWindow main = new MainWindow();
                     main.ShowDialog();
                 }
                 if (user == "admin" && pass == "admin")
@@ -46,7 +46,7 @@ namespace NorthernLightsHospital
                 }
                 if (user == "medecin" && pass == "medecin")
                 {
-                    MenuPrepose main = new MenuPrepose();
+                    FenetreMedecin main = new FenetreMedecin();
                     main.ShowDialog();
                 }
                 else if (essai == 2)
