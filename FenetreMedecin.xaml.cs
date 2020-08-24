@@ -54,6 +54,8 @@ namespace NorthernLightsHospital
                     tbox_prov.Text = pat.Province;
                     tbox_CP.Text = pat.CP;
                     tbox_tel.Text = tel;
+
+                    afficheDetailsAdmission();
                 }
                 else
                 {
@@ -79,5 +81,11 @@ namespace NorthernLightsHospital
             tb_NAS2.Text = NAS;
         }
 
+        // AFFICHER dans le section 'détails admission'
+        private void afficheDetailsAdmission() 
+        { 
+       // var query 
+
+        }
     }
 }
