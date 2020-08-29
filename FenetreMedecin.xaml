@@ -64,8 +64,8 @@
                 <TextBlock x:Name="tb_NAS2" HorizontalAlignment="Left" Margin="112,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150">
                     <TextBlock.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFF7993B" Offset="0"/>
-                            <GradientStop Color="#FFB6F858" Offset="1"/>
+                            <GradientStop Color="#FFF7993B" Offset="0.617"/>
+                            <GradientStop Color="#FFB6F858"/>
                         </LinearGradientBrush>
                     </TextBlock.Foreground>
                 </TextBlock>
@@ -77,12 +77,12 @@
                 <TextBlock x:Name="tb_nomSpecMedecin" HorizontalAlignment="Left" Margin="181,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="107" Foreground="#FF083825" Height="36"/>
                 <CheckBox x:Name="chbox_chirugie" Content="Chirugie" HorizontalAlignment="Left" Margin="126,134,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lb_chirugie" Content="Date chirugie :" HorizontalAlignment="Left" Margin="40,154,0,0" VerticalAlignment="Top"/>
-                <DatePicker x:Name="dp_chirugie" HorizontalAlignment="Left" Margin="126,156,0,0" VerticalAlignment="Top" Width="111" Background="#FFFBDBBB"/>
+                <DatePicker x:Name="dp_chirugie" HorizontalAlignment="Left" Margin="126,156,0,0" VerticalAlignment="Top" Width="111" Background="#FFB4EBF5"/>
                 <!--Choix lit-->
                 <Label x:Name="lb_choixLit" Content="Numéro lit    |    type de chambre :" HorizontalAlignment="Left" Margin="51,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.096,-0.922" Width="214"/>
                 <ComboBox x:Name="cb_choixLit" HorizontalAlignment="Left" Margin="35,211,0,0" VerticalAlignment="Top" Width="227" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Lit"/>
                 <!-- Erreurs -->
-                <TextBlock x:Name="tb_Erreur" HorizontalAlignment="Left" Margin="40,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="27" Width="227" Foreground="#FFFF1E1E"/>
+                <TextBlock x:Name="tb_Erreur" HorizontalAlignment="Left" Margin="112,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="27" Width="155" Foreground="#FFFF1E1E"/>
             </Grid>
         </GroupBox>
         <!-- Donner congé -->
