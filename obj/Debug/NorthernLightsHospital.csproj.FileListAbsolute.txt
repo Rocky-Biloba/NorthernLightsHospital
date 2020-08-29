@@ -26,3 +26,4 @@ C:\Users\DevOtter\Desktop\RLO_things\CSharpII\ProjetIntegrateur\NorthernLightsHo
 C:\Users\DevOtter\Desktop\RLO_things\CSharpII\ProjetIntegrateur\NorthernLightsHospital\obj\Debug\RecherchePatient.g.cs
 C:\Users\DevOtter\Desktop\RLO_things\CSharpII\ProjetIntegrateur\NorthernLightsHospital\obj\Debug\RecherchePatient.baml
 C:\Users\DevOtter\Desktop\RLO_things\CSharpII\ProjetIntegrateur\NorthernLightsHospital\obj\Debug\FenetreMedecin.g.cs
+C:\Users\DevOtter\Desktop\RLO_things\CSharpII\ProjetIntegrateur\NorthernLightsHospital\obj\Debug\FenetreMedecin.baml

@@ -72,7 +72,7 @@
                 </TextBlock>
                 <!-- old gold: #FF856213-->
                 <Label x:Name="lb_dateAdmis" Content="Date d'admission :" HorizontalAlignment="Left" Margin="4,59,0,0" VerticalAlignment="Top"/>
-                <DatePicker x:Name="dp_dateAdmis" HorizontalAlignment="Left" Margin="111,59,0,0" VerticalAlignment="Top" Width="149"/>
+                <DatePicker x:Name="dp_dateAdmis" HorizontalAlignment="Left" Margin="111,59,0,0" VerticalAlignment="Top" Width="113"/>
                 <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="35,84,0,0" VerticalAlignment="Top"/>
                 <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="113,88,0,0" VerticalAlignment="Top" Width="60"  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin" SelectionChanged="cb_IDmedecin_SelectionChanged"/>
                 <TextBlock x:Name="tb_nomSpecMedecin" HorizontalAlignment="Left" Margin="181,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="107" Foreground="#FF083825" Height="36"/>
@@ -80,8 +80,9 @@
                 <Label x:Name="lb_chirugie" Content="Date chirugie :" HorizontalAlignment="Left" Margin="27,135,0,0" VerticalAlignment="Top"/>
                 <DatePicker x:Name="dp_chirugie" HorizontalAlignment="Left" Margin="113,137,0,0" VerticalAlignment="Top" Width="111" Background="#FFFBDBBB"/>
                 <!--Choix lit-->
-                <Label x:Name="lb_choixLit" Content="Numéro lit    |    type de chambre :" HorizontalAlignment="Left" Margin="38,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.096,-0.922" Width="214"/>
-                <ComboBox x:Name="cb_choixLit" HorizontalAlignment="Left" Margin="22,192,0,0" VerticalAlignment="Top" Width="227" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Lit"/>
+                <Label x:Name="lb_choixLit" Content="Numéro lit    |    type    |    dept  :" HorizontalAlignment="Left" Margin="35,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.096,-0.922" Width="214"/>
+                <!--<ComboBox x:Name="cb_choixLit" HorizontalAlignment="Left" Margin="35,192,0,0" VerticalAlignment="Top" Width="57" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Lit"/> {Lee}-->
+                <ComboBox x:Name="cb_choixLit" HorizontalAlignment="Left" Margin="35,192,0,0" VerticalAlignment="Top" Width="225"/>
                 <CheckBox x:Name="chbox_tv" Content="T.V. " HorizontalAlignment="Left" Margin="58,219,0,0" VerticalAlignment="Top" ToolTip="coût : 42,50$"/>
                 <CheckBox x:Name="chbox_telChambre" Content="Tél. chambre " HorizontalAlignment="Left" Margin="139,219,0,0" VerticalAlignment="Top" ToolTip="coût : 7,50$"/>
                 <TextBlock x:Name="tb_litErreur" HorizontalAlignment="Left" Margin="35,253,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="67" Width="227" Foreground="#FFFF1E1E"/>

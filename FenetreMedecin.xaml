@@ -14,16 +14,16 @@
                 <GradientStop Color="#FF38B080" Offset="0.863"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--ID Préposé-->
-        <Label x:Name="lb_preposeID" Content="Préposé : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF083825"/>
-        <TextBlock x:Name="tb_preposeID" HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF083825"/>
+        <!--ID Médecin-->
+        <Label x:Name="lb_userID" Content="Médecin : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF083825"/>
+        <TextBlock x:Name="tb_userID" HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF083825"/>
         <!--TITRE-->
         <Label x:Name="lb_titreAjouterPatient" Content="Rechercher et donner congé à un patient" HorizontalAlignment="Left" Margin="270,8,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="2" Color="White"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="lb_titreRechercheNAS" Content="Rechercher le patient par le NAS avant de l'ajouter :" HorizontalAlignment="Left" Margin="113,49,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontSize="9" FontFamily="Segoe UI Semibold">
+        <Label x:Name="lb_titreRechercheNAS" Content="Rechercher le patient par le NAS pour donner congé :" HorizontalAlignment="Left" Margin="113,49,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontSize="9" FontFamily="Segoe UI Semibold">
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="2" Color="White"/>
             </Label.Effect>
@@ -31,21 +31,20 @@
         <!--info patient-->
         <GroupBox x:Name="gbox_coordPatient" Header="Info Patient" HorizontalAlignment="Left" Height="352" VerticalAlignment="Top" Width="297" Margin="49,39,0,0" BorderBrush="#FFB3FF45" Foreground="#FF083825">
             <Grid HorizontalAlignment="Left" Height="331" VerticalAlignment="Top" Width="287" Margin="0,0,-2,-2">
+                <Label x:Name="lb_NAS" Content="NAS :" HorizontalAlignment="Left" Margin="73,20,0,0" VerticalAlignment="Top"/>
+
                 <Label x:Name="lb_prenom" Content="Prénom :" HorizontalAlignment="Left" Margin="56,53,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="tbox_prenom" HorizontalAlignment="Left" Height="23" Margin="118,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
                 <Label x:Name="lb_nom" Content="Nom :" HorizontalAlignment="Left" Margin="71,81,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="tbox_nom" HorizontalAlignment="Left" Height="23" Margin="118,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
-                <Label x:Name="lb_NAS" Content="NAS :" HorizontalAlignment="Left" Margin="73,20,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="tbox_NAS" HorizontalAlignment="Left" Height="23" Margin="117,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90" TextChanged="tbox_NAS_TextChanged"/>
                 <Label x:Name="lb_DOB" Content="DOB :" HorizontalAlignment="Left" Margin="74,113,0,0" VerticalAlignment="Top"/>
                 <DatePicker x:Name="dp_DOB" HorizontalAlignment="Left" Margin="119,114,0,0" VerticalAlignment="Top" Width="149"/>
-                <Label x:Name="lb_IDassurance" Content="ID Assurance :" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cb_IDassurance" HorizontalAlignment="Left" Margin="99,147,0,0" VerticalAlignment="Top" Width="36">
+                <Label x:Name="lb_IDassurance" Content="ID Assurance :" HorizontalAlignment="Left" Margin="30,144,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cb_IDassurance" HorizontalAlignment="Left" Margin="119,145,0,0" VerticalAlignment="Top" Width="36">
                     <ComboBoxItem x:Name="_1" Content="1"/>
                     <ComboBoxItem x:Name="_2" Content="2"/>
                     <ComboBoxItem x:Name="_3" Content="3"/>
                 </ComboBox>
-                <Button x:Name="btn_refParent" Content="Ajouter un réf. parent" HorizontalAlignment="Left" Margin="160,146,0,0" VerticalAlignment="Top" Width="108" Height="23" FontSize="10" Background="#FFFBDBBB" Click="btn_refParent_Click"/>
                 <Label x:Name="lb_adresse" Content="Adresse :" HorizontalAlignment="Left" Margin="55,180,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="tbox_adresse" HorizontalAlignment="Left" Height="23" Margin="118,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
                 <Label x:Name="lb_ville" Content="Ville :" HorizontalAlignment="Left" Margin="75,208,0,0" VerticalAlignment="Top"/>
@@ -66,31 +65,33 @@
                     <TextBlock.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF7993B" Offset="0"/>
-                            <GradientStop Color="#FFF595A6" Offset="1"/>
+                            <GradientStop Color="#FFB6F858" Offset="1"/>
                         </LinearGradientBrush>
                     </TextBlock.Foreground>
                 </TextBlock>
                 <!-- old gold: #FF856213-->
-                <Label x:Name="lb_dateAdmis" Content="Date d'admission :" HorizontalAlignment="Left" Margin="4,59,0,0" VerticalAlignment="Top"/>
-                <DatePicker x:Name="dp_dateAdmis" HorizontalAlignment="Left" Margin="111,59,0,0" VerticalAlignment="Top" Width="149"/>
-                <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="35,84,0,0" VerticalAlignment="Top"/>
-                <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="113,88,0,0" VerticalAlignment="Top" Width="60"  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin" SelectionChanged="cb_IDmedecin_SelectionChanged"/>
+                <Label x:Name="lb_dateAdmis" Content="Date d'admission :" HorizontalAlignment="Left" Margin="17,78,0,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="dp_dateAdmis" HorizontalAlignment="Left" Margin="124,78,0,0" VerticalAlignment="Top" Width="113"/>
+                <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="48,103,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="126,107,0,0" VerticalAlignment="Top" Width="60"  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin"/>
                 <TextBlock x:Name="tb_nomSpecMedecin" HorizontalAlignment="Left" Margin="181,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="107" Foreground="#FF083825" Height="36"/>
-                <CheckBox x:Name="chbox_chirugie" Content="Chirugie" HorizontalAlignment="Left" Margin="113,115,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="lb_chirugie" Content="Date chirugie :" HorizontalAlignment="Left" Margin="27,135,0,0" VerticalAlignment="Top"/>
-                <DatePicker x:Name="dp_chirugie" HorizontalAlignment="Left" Margin="113,137,0,0" VerticalAlignment="Top" Width="111" Background="#FFFBDBBB"/>
+                <CheckBox x:Name="chbox_chirugie" Content="Chirugie" HorizontalAlignment="Left" Margin="126,134,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lb_chirugie" Content="Date chirugie :" HorizontalAlignment="Left" Margin="40,154,0,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="dp_chirugie" HorizontalAlignment="Left" Margin="126,156,0,0" VerticalAlignment="Top" Width="111" Background="#FFFBDBBB"/>
                 <!--Choix lit-->
-                <Label x:Name="lb_choixLit" Content="Numéro lit    |    type de chambre :" HorizontalAlignment="Left" Margin="38,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.096,-0.922" Width="214"/>
-                <ComboBox x:Name="cb_choixLit" HorizontalAlignment="Left" Margin="22,192,0,0" VerticalAlignment="Top" Width="227" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Lit"/>
-                <CheckBox x:Name="chbox_tv" Content="T.V. " HorizontalAlignment="Left" Margin="58,219,0,0" VerticalAlignment="Top" ToolTip="coût : 42,50$"/>
-                <CheckBox x:Name="chbox_telChambre" Content="Tél. chambre " HorizontalAlignment="Left" Margin="139,219,0,0" VerticalAlignment="Top" ToolTip="coût : 7,50$"/>
-                <TextBlock x:Name="tb_litErreur" HorizontalAlignment="Left" Margin="35,253,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="67" Width="227" Foreground="#FFFF1E1E"/>
+                <Label x:Name="lb_choixLit" Content="Numéro lit    |    type de chambre :" HorizontalAlignment="Left" Margin="51,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.096,-0.922" Width="214"/>
+                <ComboBox x:Name="cb_choixLit" HorizontalAlignment="Left" Margin="35,211,0,0" VerticalAlignment="Top" Width="227" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Lit"/>
+                <!-- Erreurs -->
+                <TextBlock x:Name="tb_Erreur" HorizontalAlignment="Left" Margin="40,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="27" Width="227" Foreground="#FFFF1E1E"/>
             </Grid>
         </GroupBox>
+        <!-- Donner congé -->
+        <Label x:Name="lb_conge" Content="Date congé :" HorizontalAlignment="Left" Margin="486,314,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dp_conge" HorizontalAlignment="Left" Margin="572,316,0,0" VerticalAlignment="Top" Width="111" Background="#FFFBDBBB"/>
         <!--Boutons-->
         <Button x:Name="btn_rechercher" Content="Rechercher" HorizontalAlignment="Left" Margin="270,71,0,0" VerticalAlignment="Top" Width="58" Background="#FFFFD2DA" RenderTransformOrigin="0.5,0.5" Height="34" Click="btn_rechercher_Click" FontSize="10"/>
-        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="366,80,0,0" VerticalAlignment="Top" Width="56" Background="#FFF4D2FF" RenderTransformOrigin="0.5,0.5" Height="41" />
-        <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="365,299,0,0" VerticalAlignment="Top" Width="57" Background="#FFD2D4FF" RenderTransformOrigin="0.5,0.5" Height="41" />
-        <Button x:Name="btn_admettre" Content="Admettre" HorizontalAlignment="Left" Margin="366,196,0,0" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD"/>
+        <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="365,299,0,0" VerticalAlignment="Top" Width="57" Background="#FFD2D4FF" RenderTransformOrigin="0.5,0.5" Height="41" Click="btn_annuler_Click" />
+        <Button x:Name="btn_conge" Content="Congé" HorizontalAlignment="Left" Margin="366,196,0,0" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD" Click="btn_conge_Click"/>
+        <TextBox x:Name="tbox_NAS" HorizontalAlignment="Left" Height="23" Margin="173,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90" TextChanged="tbox_NAS_TextChanged"/>
     </Grid>
 </Window>
