@@ -18,8 +18,6 @@
         <TextBox x:Name="tbox_prenom" HorizontalAlignment="Left" Height="23" Margin="108,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
         <Label x:Name="lb_nom" Content="Nom :" HorizontalAlignment="Left" Margin="61,69,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbox_nom" HorizontalAlignment="Left" Height="23" Margin="108,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
-        <Label x:Name="lb_DOB" Content="DOB :" HorizontalAlignment="Left" Margin="64,101,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dp_DOB" HorizontalAlignment="Left" Margin="109,102,0,0" VerticalAlignment="Top" Width="149"/>
         <Label x:Name="lb_adresse" Content="Adresse :" HorizontalAlignment="Left" Margin="45,133,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbox_adresse" HorizontalAlignment="Left" Height="23" Margin="108,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
         <Label x:Name="lb_ville" Content="Ville :" HorizontalAlignment="Left" Margin="65,161,0,0" VerticalAlignment="Top"/>
@@ -31,6 +29,6 @@
         <Label x:Name="lb_tel" Content="Téléphone :" HorizontalAlignment="Left" Margin="33,245,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbox_tel" HorizontalAlignment="Left" Height="23" Margin="108,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ToolTip="10 chiffres, aucun espace"/>
         <!--button-->
-        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="0.949,0.203" Height="52" Background="#FFDEC8FD" Click="btn_conge_Click"/>
+        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="0.949,0.203" Height="52" Background="#FFDEC8FD" Click="btn_ajouter_Click"/>
     </Grid>
 </Window>

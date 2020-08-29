@@ -25,9 +25,6 @@ namespace NorthernLightsHospital
         {
             InitializeComponent();
             cb_IDmedecin.DataContext = Login.myBDD.tblMedecins.ToList();
-            //cb_choixLit.DataContext = Login.myBDD.tblLits.ToList();  //{Lee}
-            //cb_choixLit.DataContext = Login.myBDD.tblLitTypes.ToList(); //
-            //cb_choixLit.DataContext = Login.myBDD.tblDepts.ToList();//
             dp_dateAdmis.SelectedDate = DateTime.Today;
 
             // récrupère les LITS disponibles (Occupé = 0 ou false) 
@@ -113,16 +110,15 @@ namespace NorthernLightsHospital
         // RÉF PARENT
         private void btn_refParent_Click(object sender, RoutedEventArgs e)
         {
-            // POP-UP WINDOW AJOUTER UNE RÉF PARENT
+            int nasPatient = int.Parse(tbox_NAS.Text.Trim());
+            FenetreRefParent main = new FenetreRefParent(nasPatient);
+            main.ShowDialog();
+            //FenetreRefParent.NASpatient = nasPatient; 
         }
 
         // AJOUTER PATIENT
         private void btn_ajouter_Click(object sender, RoutedEventArgs e)
         {
-        //    btn_ajouter.IsEnabled = true;
-        //    btn_Admis.IsEnabled = true;
-
-            
             tblPatient patient = new tblPatient();
 
             patient.NAS = int.Parse(tbox_NAS.Text);

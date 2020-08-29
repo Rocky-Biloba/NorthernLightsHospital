@@ -91,16 +91,7 @@ namespace NorthernLightsHospital
 
                     // AFFICHAGE des informations associé tblAdmission
                     tblAdmission adm = Login.myBDD.tblAdmissions.SingleOrDefault(x => x.NAS == nasPatient);
-                    //if (adm.dateConge != null)
-                    //{
-                    //}
-                    //else {
-                    //    btn_conge.IsEnabled = false;
-                    //    dp_conge.IsEnabled = false;
-                    //    string erreur = " Ce patient as été congédié.";
-                    //    tb_Erreur.Text = erreur;
-                    //}
-
+            
                     if (adm != null) // Si le patient est admis
                     {
                         if (adm.dateConge == null) // Si le patient n'as pas encore été congédié

@@ -45,7 +45,7 @@
                     <ComboBoxItem x:Name="_2" Content="2"/>
                     <ComboBoxItem x:Name="_3" Content="3"/>
                 </ComboBox>
-                <Button x:Name="btn_refParent" Content="Ajouter un réf. parent" HorizontalAlignment="Left" Margin="160,146,0,0" VerticalAlignment="Top" Width="108" Height="23" FontSize="10" Background="#FFFBDBBB" Click="btn_refParent_Click"/>
+                <Button x:Name="btn_refParent" Content="Ajouter une réf. parent" HorizontalAlignment="Left" Margin="158,146,0,0" VerticalAlignment="Top" Width="110" Height="23" FontSize="10" Background="#FFFBDBBB" Click="btn_refParent_Click"/>
                 <Label x:Name="lb_adresse" Content="Adresse :" HorizontalAlignment="Left" Margin="55,180,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="tbox_adresse" HorizontalAlignment="Left" Height="23" Margin="118,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
                 <Label x:Name="lb_ville" Content="Ville :" HorizontalAlignment="Left" Margin="75,208,0,0" VerticalAlignment="Top"/>
