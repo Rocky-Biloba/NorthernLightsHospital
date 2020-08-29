@@ -39,7 +39,7 @@
         <Label x:Name="lb_mdp" Content="Mot de passe :" Grid.Column="2" HorizontalAlignment="Left" Margin="78,0,0,0" Grid.Row="3" VerticalAlignment="Top" Height="26" Width="87" Target="{Binding ElementName=pbox_mdp}"/>
         <PasswordBox x:Name="pbox_mdp" Grid.Column="3" HorizontalAlignment="Left" Margin="5,3,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120" Height="20"/>
         <Button x:Name="btn_OK" Content="OK" IsDefault ="True" Grid.Column="3" HorizontalAlignment="Left" Margin="0,5,0,0" Grid.Row="4" VerticalAlignment="Top" Width="51" Height="20" Click="btn_OK_Click"/>
-        <Button x:Name="btn_Annuler" Content="Annuler" IsCancel="True" Grid.Column="3" HorizontalAlignment="Left" Margin="79,5,0,0" Grid.Row="4" VerticalAlignment="Top" Width="51" Height="20" RenderTransformOrigin="0.874,0.592" Click="btn_Annuler_Click"/>
+        <Button x:Name="btn_Annuler" Content="Quitter" IsCancel="True" Grid.Column="3" HorizontalAlignment="Left" Margin="79,5,0,0" Grid.Row="4" VerticalAlignment="Top" Width="51" Height="20" RenderTransformOrigin="0.874,0.592" Click="btn_Annuler_Click"/>
         <Image x:Name="img_NLHlogo" Grid.Column="1" HorizontalAlignment="Left" Height="65" Grid.RowSpan="4" VerticalAlignment="Top" Width="174" Source="NLH_logo.png" Grid.ColumnSpan="2" Margin="0,15,0,0" RenderTransformOrigin="0.5,0.5">
 
             <Image.RenderTransform>

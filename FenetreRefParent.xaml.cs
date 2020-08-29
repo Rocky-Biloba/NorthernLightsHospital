@@ -19,11 +19,10 @@ namespace NorthernLightsHospital
     /// </summary>
     public partial class FenetreRefParent : Window
     {
-        public FenetreRefParent(int value)
+        public FenetreRefParent()
         {
             InitializeComponent();
-            
-            //this.NASpatient = value;
+
         }
 
         // AJOUTER RÉF PARENT
@@ -38,6 +37,7 @@ namespace NorthernLightsHospital
             parent.Province = tbox_prov.Text;
             parent.CP = tbox_CP.Text;
             parent.Tel = tbox_tel.Text;
+            parent.RefParent = Global.NASactuel;
 
             Login.myBDD.tblParents.Add(parent);
 
@@ -45,6 +45,7 @@ namespace NorthernLightsHospital
             {
                 Login.myBDD.SaveChanges();
                 MessageBox.Show("Réf. parent ajoutée avec succes!");
+                Global.referenceExiste = true;
                 Close();
             }
             catch (Exception ex)

@@ -77,7 +77,7 @@
     <Key>
       <PropertyRef Name="RefParent" />
     </Key>
-    <Property Name="RefParent" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RefParent" Type="Int32" Nullable="false" />
     <Property Name="Nom" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="Prenom" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="Adresse" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
@@ -85,7 +85,7 @@
     <Property Name="Province" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="CP" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
     <Property Name="Tel" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="tblPatients" Relationship="Self.FK_PatientsParents" FromRole="tblParents" ToRole="tblPatients" />
+    <NavigationProperty Name="tblPatients" Relationship="Self.FK_refParents_Patients" FromRole="tblParents" ToRole="tblPatients" />
   </EntityType>
   <EntityType Name="tblPatient">
     <Key>
@@ -103,7 +103,7 @@
     <Property Name="IDassurance" Type="Int32" />
     <Property Name="RefParent" Type="Int32" />
     <NavigationProperty Name="tblAdmissions" Relationship="Self.FK_AdmissionPatients" FromRole="tblPatients" ToRole="tblAdmission" />
-    <NavigationProperty Name="tblParent" Relationship="Self.FK_PatientsParents" FromRole="tblPatients" ToRole="tblParents" />
+    <NavigationProperty Name="tblParent" Relationship="Self.FK_refParents_Patients" FromRole="tblPatients" ToRole="tblParents" />
   </EntityType>
   <Association Name="FK_AdmissionLit">
     <End Role="tblLit" Type="Self.tblLit" Multiplicity="1" />
@@ -165,7 +165,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PatientsParents">
+  <Association Name="FK_refParents_Patients">
     <End Role="tblParents" Type="Self.tblParent" Multiplicity="0..1" />
     <End Role="tblPatients" Type="Self.tblPatient" Multiplicity="*" />
     <ReferentialConstraint>
@@ -207,7 +207,7 @@
       <End Role="tblLitType" EntitySet="tblLitTypes" />
       <End Role="tblLit" EntitySet="tblLits" />
     </AssociationSet>
-    <AssociationSet Name="FK_PatientsParents" Association="Self.FK_PatientsParents">
+    <AssociationSet Name="FK_refParents_Patients" Association="Self.FK_refParents_Patients">
       <End Role="tblParents" EntitySet="tblParents" />
       <End Role="tblPatients" EntitySet="tblPatients" />
     </AssociationSet>

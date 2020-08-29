@@ -21,11 +21,13 @@ namespace NorthernLightsHospital
     public partial class MainWindow : Window
     {
         string NAS;
+       
         public MainWindow()
         {
             InitializeComponent();
             cb_IDmedecin.DataContext = Login.myBDD.tblMedecins.ToList();
             dp_dateAdmis.SelectedDate = DateTime.Today;
+            Global.referenceExiste = false;
 
             // récrupère les LITS disponibles (Occupé = 0 ou false) 
             var query = from temp in Login.myBDD.tblLits where temp.Occupe == false select temp;
@@ -43,17 +45,17 @@ namespace NorthernLightsHospital
                 else 
                     NewLine += " | Privé         ";
 
-                //Department
+                //Dept
                 if (i.IDdept == 1)
                     NewLine += " | Urgence";
                 else if (i.IDdept == 2)
                     NewLine += " | Réadaptation";
                 else
-                    NewLine += " | Chirugier";
+                    NewLine += " | Chirugie";
 
                 cb_choixLit.Items.Add(NewLine);
             }
-            //int Hi = 3;
+
         }
 
 
@@ -107,13 +109,13 @@ namespace NorthernLightsHospital
             tb_NAS2.Text = NAS;
         }
 
-        // RÉF PARENT
+        // RÉFÉRENCE PARENT
         private void btn_refParent_Click(object sender, RoutedEventArgs e)
         {
-            int nasPatient = int.Parse(tbox_NAS.Text.Trim());
-            FenetreRefParent main = new FenetreRefParent(nasPatient);
+            Global.NASactuel = int.Parse(tbox_NAS.Text.Trim());
+            FenetreRefParent main = new FenetreRefParent();
             main.ShowDialog();
-            //FenetreRefParent.NASpatient = nasPatient; 
+            
         }
 
         // AJOUTER PATIENT
@@ -130,7 +132,21 @@ namespace NorthernLightsHospital
             patient.Province = tbox_prov.Text;
             patient.CP = tbox_CP.Text;
             patient.Tel = tbox_tel.Text;
-            patient.IDassurance = int.Parse(cb_IDassurance.Text);
+
+            // pas d'assurance = 0
+            if (cb_IDassurance.Text == "")
+            {
+                patient.IDassurance = 0;
+            }
+            else{
+                patient.IDassurance = int.Parse(cb_IDassurance.Text);
+            }
+            
+
+            if (Global.referenceExiste) {
+                patient.RefParent = patient.NAS;
+            }
+            
 
             Login.myBDD.tblPatients.Add(patient);
 
@@ -138,6 +154,7 @@ namespace NorthernLightsHospital
             {
                 Login.myBDD.SaveChanges();
                 MessageBox.Show("Personne ajoutée avec succes!");
+                
             }
             catch (Exception ex)
             {
@@ -211,6 +228,7 @@ namespace NorthernLightsHospital
                 {
                     Login.myBDD.SaveChanges();
                     MessageBox.Show("Personne admise avec succes!");
+                    ViderTout();
 
                 }
                 catch (Exception ex)

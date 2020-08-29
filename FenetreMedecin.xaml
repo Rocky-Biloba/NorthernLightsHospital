@@ -77,7 +77,7 @@
                 <TextBlock x:Name="tb_nomSpecMedecin" HorizontalAlignment="Left" Margin="181,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="107" Foreground="#FF083825" Height="36"/>
                 <CheckBox x:Name="chbox_chirugie" Content="Chirugie" HorizontalAlignment="Left" Margin="126,134,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lb_chirugie" Content="Date chirugie :" HorizontalAlignment="Left" Margin="40,154,0,0" VerticalAlignment="Top"/>
-                <DatePicker x:Name="dp_chirugie" HorizontalAlignment="Left" Margin="126,156,0,0" VerticalAlignment="Top" Width="111" Background="#FFB4EBF5"/>
+                <DatePicker x:Name="dp_chirugie" HorizontalAlignment="Left" Margin="126,156,0,0" VerticalAlignment="Top" Width="111" Background="#FFFBDBBB"/>
                 <!--Choix lit-->
                 <Label x:Name="lb_choixLit" Content="Numéro lit    |    type de chambre :" HorizontalAlignment="Left" Margin="51,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.096,-0.922" Width="214"/>
                 <ComboBox x:Name="cb_choixLit" HorizontalAlignment="Left" Margin="35,211,0,0" VerticalAlignment="Top" Width="227" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Lit"/>
@@ -87,7 +87,7 @@
         </GroupBox>
         <!-- Donner congé -->
         <Label x:Name="lb_conge" Content="Date congé :" HorizontalAlignment="Left" Margin="486,314,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dp_conge" HorizontalAlignment="Left" Margin="572,316,0,0" VerticalAlignment="Top" Width="111" Background="#FFFBDBBB"/>
+        <DatePicker x:Name="dp_conge" HorizontalAlignment="Left" Margin="572,316,0,0" VerticalAlignment="Top" Width="111" Background="#FFB4EBF5"/> 
         <!--Boutons-->
         <Button x:Name="btn_rechercher" Content="Rechercher" HorizontalAlignment="Left" Margin="270,71,0,0" VerticalAlignment="Top" Width="58" Background="#FFFFD2DA" RenderTransformOrigin="0.5,0.5" Height="34" Click="btn_rechercher_Click" FontSize="10"/>
         <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="365,299,0,0" VerticalAlignment="Top" Width="57" Background="#FFD2D4FF" RenderTransformOrigin="0.5,0.5" Height="41" Click="btn_annuler_Click" />

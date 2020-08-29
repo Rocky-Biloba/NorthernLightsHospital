@@ -331,15 +331,7 @@ namespace NorthernLightsHospital {
         
         #line 78 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBlock tb_nomSpecMedecin;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 79 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.CheckBox chbox_chirugie;
+        internal System.Windows.Controls.ComboBox comboBox;
         
         #line default
         #line hidden
@@ -347,7 +339,7 @@ namespace NorthernLightsHospital {
         
         #line 80 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lb_chirugie;
+        internal System.Windows.Controls.TextBlock tb_nomSpecMedecin;
         
         #line default
         #line hidden
@@ -355,7 +347,15 @@ namespace NorthernLightsHospital {
         
         #line 81 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DatePicker dp_chirugie;
+        internal System.Windows.Controls.CheckBox chbox_chirugie;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 82 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Label lb_chirugie;
         
         #line default
         #line hidden
@@ -363,7 +363,7 @@ namespace NorthernLightsHospital {
         
         #line 83 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lb_choixLit;
+        internal System.Windows.Controls.DatePicker dp_chirugie;
         
         #line default
         #line hidden
@@ -371,15 +371,7 @@ namespace NorthernLightsHospital {
         
         #line 85 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ComboBox cb_choixLit;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 86 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.CheckBox chbox_tv;
+        internal System.Windows.Controls.Label lb_choixLit;
         
         #line default
         #line hidden
@@ -387,7 +379,7 @@ namespace NorthernLightsHospital {
         
         #line 87 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.CheckBox chbox_telChambre;
+        internal System.Windows.Controls.ComboBox cb_choixLit;
         
         #line default
         #line hidden
@@ -395,23 +387,23 @@ namespace NorthernLightsHospital {
         
         #line 88 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.CheckBox chbox_tv;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 89 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.CheckBox chbox_telChambre;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 90 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock tb_litErreur;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 92 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btn_rechercher;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 93 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btn_ajouter;
         
         #line default
         #line hidden
@@ -419,13 +411,29 @@ namespace NorthernLightsHospital {
         
         #line 94 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btn_annuler;
+        internal System.Windows.Controls.Button btn_rechercher;
         
         #line default
         #line hidden
         
         
         #line 95 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btn_ajouter;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 96 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button btn_annuler;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 97 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btn_admettre;
         
@@ -589,63 +597,66 @@ namespace NorthernLightsHospital {
             #line hidden
             return;
             case 37:
-            this.tb_nomSpecMedecin = ((System.Windows.Controls.TextBlock)(target));
+            this.comboBox = ((System.Windows.Controls.ComboBox)(target));
             return;
             case 38:
-            this.chbox_chirugie = ((System.Windows.Controls.CheckBox)(target));
+            this.tb_nomSpecMedecin = ((System.Windows.Controls.TextBlock)(target));
             return;
             case 39:
-            this.lb_chirugie = ((System.Windows.Controls.Label)(target));
+            this.chbox_chirugie = ((System.Windows.Controls.CheckBox)(target));
             return;
             case 40:
-            this.dp_chirugie = ((System.Windows.Controls.DatePicker)(target));
+            this.lb_chirugie = ((System.Windows.Controls.Label)(target));
             return;
             case 41:
-            this.lb_choixLit = ((System.Windows.Controls.Label)(target));
+            this.dp_chirugie = ((System.Windows.Controls.DatePicker)(target));
             return;
             case 42:
-            this.cb_choixLit = ((System.Windows.Controls.ComboBox)(target));
+            this.lb_choixLit = ((System.Windows.Controls.Label)(target));
             return;
             case 43:
-            this.chbox_tv = ((System.Windows.Controls.CheckBox)(target));
+            this.cb_choixLit = ((System.Windows.Controls.ComboBox)(target));
             return;
             case 44:
-            this.chbox_telChambre = ((System.Windows.Controls.CheckBox)(target));
+            this.chbox_tv = ((System.Windows.Controls.CheckBox)(target));
             return;
             case 45:
-            this.tb_litErreur = ((System.Windows.Controls.TextBlock)(target));
+            this.chbox_telChambre = ((System.Windows.Controls.CheckBox)(target));
             return;
             case 46:
+            this.tb_litErreur = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 47:
             this.btn_rechercher = ((System.Windows.Controls.Button)(target));
             
-            #line 92 "..\..\MainWindow.xaml"
+            #line 94 "..\..\MainWindow.xaml"
             this.btn_rechercher.Click += new System.Windows.RoutedEventHandler(this.btn_rechercher_Click);
             
             #line default
             #line hidden
             return;
-            case 47:
+            case 48:
             this.btn_ajouter = ((System.Windows.Controls.Button)(target));
             
-            #line 93 "..\..\MainWindow.xaml"
+            #line 95 "..\..\MainWindow.xaml"
             this.btn_ajouter.Click += new System.Windows.RoutedEventHandler(this.btn_ajouter_Click);
             
             #line default
             #line hidden
             return;
-            case 48:
+            case 49:
             this.btn_annuler = ((System.Windows.Controls.Button)(target));
             
-            #line 94 "..\..\MainWindow.xaml"
+            #line 96 "..\..\MainWindow.xaml"
             this.btn_annuler.Click += new System.Windows.RoutedEventHandler(this.btn_annuler_Click);
             
             #line default
             #line hidden
             return;
-            case 49:
+            case 50:
             this.btn_admettre = ((System.Windows.Controls.Button)(target));
             
-            #line 95 "..\..\MainWindow.xaml"
+            #line 97 "..\..\MainWindow.xaml"
             this.btn_admettre.Click += new System.Windows.RoutedEventHandler(this.btn_Admis_Click);
             
             #line default

@@ -68,7 +68,7 @@
     <Key>
       <PropertyRef Name="RefParent" />
     </Key>
-    <Property Name="RefParent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefParent" Type="int" Nullable="false" />
     <Property Name="Nom" Type="nchar" MaxLength="20" />
     <Property Name="Prenom" Type="nchar" MaxLength="20" />
     <Property Name="Adresse" Type="nchar" MaxLength="20" />
@@ -153,7 +153,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_PatientsParents">
+  <Association Name="FK_refParents_Patients">
     <End Role="tblParents" Type="Self.tblParents" Multiplicity="0..1" />
     <End Role="tblPatients" Type="Self.tblPatients" Multiplicity="*" />
     <ReferentialConstraint>
@@ -195,7 +195,7 @@
       <End Role="tblLitType" EntitySet="tblLitType" />
       <End Role="tblLit" EntitySet="tblLit" />
     </AssociationSet>
-    <AssociationSet Name="FK_PatientsParents" Association="Self.FK_PatientsParents">
+    <AssociationSet Name="FK_refParents_Patients" Association="Self.FK_refParents_Patients">
       <End Role="tblParents" EntitySet="tblParents" />
       <End Role="tblPatients" EntitySet="tblPatients" />
     </AssociationSet>

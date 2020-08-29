@@ -67,12 +67,16 @@
     <Compile Include="Assurance.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="FenetreAdmin.xaml.cs">
+      <DependentUpon>FenetreAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FenetreMedecin.xaml.cs">
       <DependentUpon>FenetreMedecin.xaml</DependentUpon>
     </Compile>
     <Compile Include="FenetreRefParent.xaml.cs">
       <DependentUpon>FenetreRefParent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="MenuPrepose.cs">
       <DependentUpon>MenuPrepose.xaml</DependentUpon>
     </Compile>
@@ -118,6 +122,10 @@
     <Compile Include="tblPatient.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="FenetreAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FenetreMedecin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
