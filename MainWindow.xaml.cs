@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace NorthernLightsHospital
 {
@@ -26,9 +27,15 @@ namespace NorthernLightsHospital
         {
             InitializeComponent();
             cb_IDmedecin.DataContext = Login.myBDD.tblMedecins.ToList();
+            cb_IDmedecin.SelectedIndex = 1;
             dp_dateAdmis.SelectedDate = DateTime.Today;
+            dp_DOB.SelectedDate = DateTime.Today;
+
             // référence parent, variable globale
             Global.referenceExiste = false;
+            btn_ajouter.IsEnabled = false;
+            btn_admettre.IsEnabled = false;
+            btn_refParent.IsEnabled = false;
 
             // récrupère les LITS disponibles (tblLits.occupe = 0 ou false) 
             var query = from temp in Login.myBDD.tblLits where temp.Occupe == false select temp;
@@ -56,7 +63,7 @@ namespace NorthernLightsHospital
 
                 cb_choixLit.Items.Add(NewLine);
             }
-
+            cb_choixLit.SelectedIndex = 0;
         }
 
 
@@ -65,8 +72,6 @@ namespace NorthernLightsHospital
         {
             if (!String.IsNullOrEmpty(tbox_NAS.Text))
             {
-                btn_ajouter.IsEnabled = false;
-                btn_admettre.IsEnabled = true;
 
                 int nasPatient = int.Parse(tbox_NAS.Text.Trim());
 
@@ -85,12 +90,17 @@ namespace NorthernLightsHospital
                     tbox_prov.Text = pat.Province;
                     tbox_CP.Text = pat.CP;
                     tbox_tel.Text = tel;
+
+                    btn_admettre.IsEnabled = true;
+                    btn_refParent.IsEnabled = true;
                 }
                 else
                 {
                     MessageBox.Show("Ce NAS de patient n'existe pas encore.\n Veuillez entrer leur info",
                     "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
                     btn_ajouter.IsEnabled = true;
+                    btn_admettre.IsEnabled = false;
+                    btn_refParent.IsEnabled = true;
                 }
 
                 }
@@ -123,43 +133,61 @@ namespace NorthernLightsHospital
         private void btn_ajouter_Click(object sender, RoutedEventArgs e)
         {
             tblPatient patient = new tblPatient();
-
-            patient.NAS = int.Parse(tbox_NAS.Text);
-            patient.DOB = (DateTime)dp_DOB.SelectedDate;
-            patient.Nom = tbox_nom.Text;
-            patient.Prenom = tbox_prenom.Text;
-            patient.Adresse = tbox_adresse.Text;
-            patient.Ville = tbox_ville.Text;
-            patient.Province = tbox_prov.Text;
-            patient.CP = tbox_CP.Text;
-            patient.Tel = tbox_tel.Text;
-
-            // pas d'assurance = 0
-            if (cb_IDassurance.Text == "")
-            {
-                patient.IDassurance = 0;
-            }
-            else{
-                patient.IDassurance = int.Parse(cb_IDassurance.Text);
-            }
             
+            string validerTel = tbox_tel.Text;
+            bool tempA = ValidNAS(tbox_NAS.Text);
+            bool tempB = ValidPhone(tbox_tel.Text);
+            bool tempC = ValidPost(tbox_CP.Text);
 
-            if (Global.referenceExiste) {
-                patient.RefParent = patient.NAS;
-            }
-            
 
-            Login.myBDD.tblPatients.Add(patient);
-
-            try
+            //if (ValidNAS(tbox_NAS.Text) && ValidPhone(tbox_tel.Text) && ValidPost(tbox_CP.Text))
+            if (tempA && tempB && tempC)
             {
-                Login.myBDD.SaveChanges();
-                MessageBox.Show("Personne ajoutée avec succes!");
-                
+                patient.NAS = int.Parse(tbox_NAS.Text);
+                patient.DOB = (DateTime)dp_DOB.SelectedDate;
+                patient.Nom = tbox_nom.Text;
+                patient.Prenom = tbox_prenom.Text;
+                patient.Adresse = tbox_adresse.Text;
+                patient.Ville = tbox_ville.Text;
+                patient.Province = tbox_prov.Text;
+                patient.CP = tbox_CP.Text;
+                patient.Tel = tbox_tel.Text;
+
+                // pas d'assurance = 0
+                if (cb_IDassurance.Text == "")
+                {
+                    patient.IDassurance = 0;
+                }
+                else
+                {
+                    patient.IDassurance = int.Parse(cb_IDassurance.Text);
+                }
+
+
+                if (Global.referenceExiste)
+                {
+                    patient.RefParent = patient.NAS;
+                }
+
+
+                Login.myBDD.tblPatients.Add(patient);
+
+                try
+                {
+                    Login.myBDD.SaveChanges();
+                    MessageBox.Show("Personne ajoutée avec succes!");
+                    btn_admettre.IsEnabled = true;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Veuillez assurer que tous les champs son bien remplis",
+               "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
         }
@@ -192,13 +220,10 @@ namespace NorthernLightsHospital
 
                 tblAdmission admis = new tblAdmission();
 
-                
-
-                //tb_IDadmission.Text = autogénéré
+                //IDadmission = autogénéré
                 admis.NAS = int.Parse(tbox_NAS.Text);
                 admis.dateAdmis = (DateTime)dp_dateAdmis.SelectedDate;
                 admis.IDmedecin = int.Parse(cb_IDmedecin.Text);
-
                 admis.Lit = int.Parse(LitNum);
                 admis.Chirugie = chbox_chirugie.IsChecked;
                 //null date time fix + validation
@@ -245,7 +270,7 @@ namespace NorthernLightsHospital
         private void btn_annuler_Click(object sender, RoutedEventArgs e)
         {
             ViderTout();
-            btn_admettre.IsEnabled = true;
+            
         }
 
         private void cb_IDmedecin_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -281,6 +306,37 @@ namespace NorthernLightsHospital
             dp_chirugie.SelectedDate = null;
         }
 
-       
+        // VALIDATION 
+        bool ValidNAS(String NAS)
+        {
+             
+            //Null case
+            if (NAS == null)
+                return false;
+
+            //Regex
+            if (Regex.IsMatch(NAS, @"^[0-9]{9}$"))
+                return true;
+            else
+                return false;
+        }
+
+        bool ValidPhone(String Phone)
+        {
+            //Regex
+            if (Regex.IsMatch(Phone, @"^\(?\d{3}\)?-? *\d{3}-? *-?\d{4}$"))
+                return true;
+            else
+                return false;
+        }
+
+        bool ValidPost(String Post)
+        {
+            //Regex
+            if (Regex.IsMatch(Post, @"^[ABCEGHJKLMNPRSTVXYabceghjklmnprstvxy]{1}\d{1}[A-Za-z]{1}\d{1}[A-Za-z]{1}\d{1}$"))
+                return true;
+            else
+                return false;
+        }
     }
 }

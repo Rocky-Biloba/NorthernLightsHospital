@@ -28,6 +28,7 @@ namespace NorthernLightsHospital
             cb_choixLit.DataContext = Login.myBDD.tblLitTypes.ToList();
             cb_choixLit.DataContext = Login.myBDD.tblDepts.ToList();
             dp_dateAdmis.SelectedDate = DateTime.Today;
+            dp_conge.SelectedDate = DateTime.Today;
 
             // all fields read-only, except NAS (recherche) + date congé 
             gbox_coordPatient.IsEnabled = false;
@@ -156,7 +157,7 @@ namespace NorthernLightsHospital
                 {
                     Login.myBDD.SaveChanges();
 
-                    MessageBox.Show("Patient " + nasPatient + " congédié le : " + releaseDate.ToString("YYYY MM DD"),
+                    MessageBox.Show("Patient " + nasPatient + " congédié le : " + releaseDate.ToString("yyyy MM dd"),
                     "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception f)

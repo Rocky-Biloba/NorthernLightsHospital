@@ -25,10 +25,11 @@
         <Label x:Name="lb_prov" Content="Province :" HorizontalAlignment="Left" Margin="42,189,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbox_prov" HorizontalAlignment="Left" Height="23" Margin="108,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
         <Label x:Name="lb_CP" Content="Code postale :" HorizontalAlignment="Left" Margin="17,217,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbox_CP" HorizontalAlignment="Left" Height="23" Margin="108,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" ToolTip="6 charactères, aucun espace"/>
+        <TextBox x:Name="tbox_CP" HorizontalAlignment="Left" Height="23" Margin="108,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" ToolTip="eg. T1T1T1"/>
         <Label x:Name="lb_tel" Content="Téléphone :" HorizontalAlignment="Left" Margin="33,245,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbox_tel" HorizontalAlignment="Left" Height="23" Margin="108,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ToolTip="10 chiffres, aucun espace"/>
         <!--button-->
-        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="285,211,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="0.949,0.203" Height="52" Background="#FFDEC8FD" Click="btn_ajouter_Click"/>
+        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="289,87,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="0.949,0.203" Height="52" Background="#FFDEC8FD" Click="btn_ajouter_Click"/>
+        <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="289,191,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="0.949,0.203" Height="52" Background="#FFFFD2DA" Click="btn_annuler_Click" />
     </Grid>
 </Window>

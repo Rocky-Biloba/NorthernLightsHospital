@@ -30,12 +30,25 @@ namespace NorthernLightsHospital
             cb_specialite.Items.Add("Pédiatrie");
             cb_specialite.Items.Add("Anesthésiologie");
 
+            cb_specialite.SelectedIndex = 1;
+
         }
 
         private void cb_IDmedecin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // affiche Prenom, Nom, Specialite du médecin
+            //// AFFICHER Prenom, Nom, Specialite du médecin
+            //// récupère le int IDmedecin du combobox      
+            //try 
+            //{
+            //    string cbChoice = cb_IDmedecin.Text;
 
+            //    int IDmed = int.Parse(cbChoice);
+            //    IDmed++;
+            //    var query = from med in Login.myBDD.tblMedecins where med.IDmedecin == IDmed select med;
+            //    List<NorthernLightsHospital.tblMedecin> list_query = query.ToList();
+            //    tb_detailMedecin.Text = list_query[0].Prenom + " " + list_query[0].Nom + ", " + list_query[0].Specialite + ".";
+            //}
+            //catch { }
         }
 
         // SUPPRIMER
@@ -75,6 +88,7 @@ namespace NorthernLightsHospital
                 try
                 {
                     Login.myBDD.SaveChanges();
+                    ViderTout();
                     cb_IDmedecin.DataContext = Login.myBDD.tblMedecins.ToList();
                     MessageBox.Show("Docteur " + IDmed + " congédié le : " + DateTime.Today.ToString("yyyy MM dd"),
                        "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -89,26 +103,65 @@ namespace NorthernLightsHospital
 
         private void btn_ajouter_Click(object sender, RoutedEventArgs e)
         {
-            tblMedecin medecin = new tblMedecin();
-
-            medecin.Nom = tbox_nom.Text;
-            medecin.Prenom = tbox_prenom.Text;
-            medecin.Specialite = cb_specialite.Text;
-
-            Login.myBDD.tblMedecins.Add(medecin);
-
-            try
+            if (ValidNoms(tbox_prenom.Text) && ValidNoms(tbox_nom.Text))
             {
-                Login.myBDD.SaveChanges();
-                cb_IDmedecin.DataContext = Login.myBDD.tblMedecins.ToList();
-                MessageBox.Show("Médecin ajouté avec succes!");
+                tblMedecin medecin = new tblMedecin();
 
+                medecin.Nom = tbox_nom.Text;
+                medecin.Prenom = tbox_prenom.Text;
+                medecin.Specialite = cb_specialite.Text;
+
+                Login.myBDD.tblMedecins.Add(medecin);
+
+                try
+                {
+                    Login.myBDD.SaveChanges();
+                    ViderTout();
+                    cb_IDmedecin.DataContext = Login.myBDD.tblMedecins.ToList();
+                    MessageBox.Show("Médecin ajouté avec succes!");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Veuillez assurer que tous les champs son bien remplis",
+                       "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void btn_annuler_Click(object sender, RoutedEventArgs e)
+        {
+            ViderTout();
+        }
+
+        public void ViderTout()
+        {
+            // vider les TextBox
+            tbox_prenom.Text = String.Empty;
+            tbox_nom.Text = String.Empty;
+            tb_erreur.Text = String.Empty;
+
+            // vider les combobox
+            cb_IDmedecin.Text = String.Empty;
+            cb_specialite.Text = String.Empty;
+
+        }
+
+
+        // VALIDATION 
+        bool ValidNoms(String nom)
+        {
+            //Null case
+            if (nom == "")
+                return false;
+            else
+                return true;
+        }
+
     }
 }
 

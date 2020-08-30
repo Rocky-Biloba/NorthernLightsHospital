@@ -36,7 +36,7 @@
                 <Label x:Name="lb_nom" Content="Nom :" HorizontalAlignment="Left" Margin="71,81,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="tbox_nom" HorizontalAlignment="Left" Height="23" Margin="118,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
                 <Label x:Name="lb_NAS" Content="NAS :" HorizontalAlignment="Left" Margin="73,20,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="tbox_NAS" HorizontalAlignment="Left" Height="23" Margin="117,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90" TextChanged="tbox_NAS_TextChanged"/>
+                <TextBox x:Name="tbox_NAS" HorizontalAlignment="Left" Height="23" Margin="117,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="90" TextChanged="tbox_NAS_TextChanged" ToolTip="9 chiffres, aucun esapce"/>
                 <Label x:Name="lb_DOB" Content="DOB :" HorizontalAlignment="Left" Margin="74,113,0,0" VerticalAlignment="Top"/>
                 <DatePicker x:Name="dp_DOB" HorizontalAlignment="Left" Margin="119,114,0,0" VerticalAlignment="Top" Width="149"/>
                 <Label x:Name="lb_IDassurance" Content="ID Assurance :" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top"/>
@@ -53,7 +53,7 @@
                 <Label x:Name="lb_prov" Content="Province :" HorizontalAlignment="Left" Margin="52,236,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="tbox_prov" HorizontalAlignment="Left" Height="23" Margin="118,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
                 <Label x:Name="lb_CP" Content="Code postale :" HorizontalAlignment="Left" Margin="27,264,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="tbox_CP" HorizontalAlignment="Left" Height="23" Margin="118,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" ToolTip="6 charactères, aucun espace"/>
+                <TextBox x:Name="tbox_CP" HorizontalAlignment="Left" Height="23" Margin="118,267,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="70" ToolTip="eg. T1T1T1"/>
                 <Label x:Name="lb_tel" Content="Téléphone :" HorizontalAlignment="Left" Margin="43,292,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="tbox_tel" HorizontalAlignment="Left" Height="23" Margin="118,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" ToolTip="10 chiffres, aucun espace"/>
             </Grid>
@@ -62,14 +62,7 @@
         <GroupBox x:Name="gbox_admissionPatient" Header="Détails admission" HorizontalAlignment="Left" Height="352" VerticalAlignment="Top" Width="304" Margin="440,39,0,0" BorderBrush="#FFB3FF45" Foreground="#FF083825">
             <Grid HorizontalAlignment="Left" Margin="0,-2,-2,1" Width="294">
                 <Label x:Name="lb_NAS2" Content="NAS :" HorizontalAlignment="Left" Margin="71,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.797,0.963"/>
-                <TextBlock x:Name="tb_NAS2" HorizontalAlignment="Left" Margin="112,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150">
-                    <TextBlock.Foreground>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFF7993B" Offset="0"/>
-                            <GradientStop Color="#FFF595A6" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBlock.Foreground>
-                </TextBlock>
+                <TextBlock x:Name="tb_NAS2" HorizontalAlignment="Left" Margin="112,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF856213"/>
                 <!-- old gold: #FF856213-->
                 <Label x:Name="lb_dateAdmis" Content="Date d'admission :" HorizontalAlignment="Left" Margin="4,59,0,0" VerticalAlignment="Top"/>
                 <DatePicker x:Name="dp_dateAdmis" HorizontalAlignment="Left" Margin="111,59,0,0" VerticalAlignment="Top" Width="113"/>
