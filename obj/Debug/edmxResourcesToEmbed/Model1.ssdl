@@ -59,7 +59,7 @@
     <Key>
       <PropertyRef Name="IDmedecin" />
     </Key>
-    <Property Name="IDmedecin" Type="int" Nullable="false" />
+    <Property Name="IDmedecin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nom" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Prenom" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Specialite" Type="nchar" MaxLength="30" Nullable="false" />

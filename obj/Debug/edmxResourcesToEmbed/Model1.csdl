@@ -67,7 +67,7 @@
     <Key>
       <PropertyRef Name="IDmedecin" />
     </Key>
-    <Property Name="IDmedecin" Type="Int32" Nullable="false" />
+    <Property Name="IDmedecin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nom" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Prenom" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Specialite" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />

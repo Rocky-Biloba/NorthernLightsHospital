@@ -29,31 +29,37 @@
             </Label.Effect>
         </Label>
 
-        <!--<GroupBox x:Name="gb_listeMed" Header="Recherche médecin" HorizontalAlignment="Left" Height="162" Margin="15,57,0,0" VerticalAlignment="Top" Width="274">-->
-        <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="60,83,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="141,83,0,0" VerticalAlignment="Top" Width="60" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin" SelectionChanged="cb_IDmedecin_SelectionChanged" Height="26"/>
-        <TextBlock x:Name="tb_erreur" HorizontalAlignment="Left" Margin="141,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="71" Width="157" Foreground="#FFFF0505"/>
-        <!--</GroupBox>-->
+        <!--recherche medecin-->
+        <GroupBox x:Name="gb_listeMed" Header="Recherche médecin" HorizontalAlignment="Left" Height="162" Margin="35,36,0,0" VerticalAlignment="Top" Width="274" BorderBrush="#FFB3FF45" Foreground="#FF083825">
+            <Grid>
+                <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="91,32,0,0" VerticalAlignment="Top" Width="60" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin" SelectionChanged="cb_IDmedecin_SelectionChanged" Height="26"/>
+                <TextBlock x:Name="tb_erreur" HorizontalAlignment="Left" Margin="91,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="71" Width="157" Foreground="#FFFF0505"/>
+            </Grid>
+        </GroupBox>
 
-        <Label x:Name="lb_ajouteMed" Content="Ajouter un médecin" HorizontalAlignment="Left" Margin="107,190,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
+        <Label x:Name="lb_ajouteMed" Content="Ajouter un médecin" HorizontalAlignment="Left" Margin="113,235,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="2" Color="White"/>
             </Label.Effect>
         </Label>
 
-        <!--<GroupBox x:Name="gb_infoMedecin" Header="Info médecin" HorizontalAlignment="Left" Height="170" Margin="36,216,0,0" VerticalAlignment="Top" Width="273">-->
-            <Label x:Name="lb_prenom" Content="Prénom :" HorizontalAlignment="Left" Margin="60,221,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="tbox_prenom" HorizontalAlignment="Left" Height="23" Margin="117,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
-            <Label x:Name="lb_nom" Content="Nom :" HorizontalAlignment="Left" Margin="71,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.572,0.028"/>
-            <TextBox x:Name="tbox_nom" HorizontalAlignment="Left" Height="23" Margin="118,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
-        <Label x:Name="lb_specialite" Content="Spécialité :" HorizontalAlignment="Left" Margin="47,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.572,0.028"/>
-        <ComboBox x:Name="cb_specialite" HorizontalAlignment="Left" Margin="118,280,0,0" VerticalAlignment="Top" Width="149" Height="26"/>
-        <!--</GroupBox>-->
+        <!--info medecin-->
+        <GroupBox x:Name="gb_infoMedecin" Header="Info médecin" HorizontalAlignment="Left" Height="170" Margin="36,216,0,0" VerticalAlignment="Top" Width="273" BorderBrush="#FFB3FF45" Foreground="#FF083825">
+            <Grid>
+                <Label x:Name="lb_prenom" Content="Prénom :" HorizontalAlignment="Left" Margin="34,31,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="tbox_prenom" HorizontalAlignment="Left" Height="23" Margin="91,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+                <Label x:Name="lb_nom" Content="Nom :" HorizontalAlignment="Left" Margin="45,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.572,0.028"/>
+                <TextBox x:Name="tbox_nom" HorizontalAlignment="Left" Height="23" Margin="92,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+                <Label x:Name="lb_specialite" Content="Spécialité :" HorizontalAlignment="Left" Margin="21,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.572,0.028"/>
+                <ComboBox x:Name="cb_specialite" HorizontalAlignment="Left" Margin="92,90,0,0" VerticalAlignment="Top" Width="149" Height="26"/>
+            </Grid>
+        </GroupBox>
 
         <!--BUTTONS-->
-        <Button x:Name="btn_supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="316,77,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD"/>
-        <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="316,147,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD"/>
-        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="316,215,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD"/>
+        <Button x:Name="btn_supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="316,77,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFF4D2FF" Click="btn_supprimer_Click"/>
+        <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="316,174,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFD2D4FF"/>
+        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="316,257,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD" Click="btn_ajouter_Click"/>
 
     </Grid>
 </Window>
