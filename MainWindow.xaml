@@ -15,8 +15,8 @@
             </LinearGradientBrush>
         </Grid.Background>
         <!--ID Préposé-->
-        <Label x:Name="lb_preposeID" Content="Préposé : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF083825"/>
-        <TextBlock x:Name="tb_preposeID" HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF083825"/>
+        <Label x:Name="lb_userID" Content="Préposé : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF083825"/>
+        <TextBlock x:Name="tb_userID" HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="58" Foreground="#FF083825"/>
         <!--TITRE-->
         <Label x:Name="lb_titreAjouterPatient" Content="Rechercher et ajouter un patient" HorizontalAlignment="Left" Margin="296,8,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
             <Label.Effect>
@@ -75,6 +75,8 @@
                 <DatePicker x:Name="dp_dateAdmis" HorizontalAlignment="Left" Margin="111,59,0,0" VerticalAlignment="Top" Width="113"/>
                 <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="35,84,0,0" VerticalAlignment="Top"/>
                 <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="113,88,0,0" VerticalAlignment="Top" Width="60"  IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin" SelectionChanged="cb_IDmedecin_SelectionChanged"/>
+                <ComboBox x:Name="comboBox" Height="0" Width="35"/>
+
                 <TextBlock x:Name="tb_nomSpecMedecin" HorizontalAlignment="Left" Margin="181,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="107" Foreground="#FF083825" Height="36"/>
                 <CheckBox x:Name="chbox_chirugie" Content="Chirugie" HorizontalAlignment="Left" Margin="113,115,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lb_chirugie" Content="Date chirugie :" HorizontalAlignment="Left" Margin="27,135,0,0" VerticalAlignment="Top"/>

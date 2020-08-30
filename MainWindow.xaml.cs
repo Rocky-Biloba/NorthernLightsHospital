@@ -27,9 +27,10 @@ namespace NorthernLightsHospital
             InitializeComponent();
             cb_IDmedecin.DataContext = Login.myBDD.tblMedecins.ToList();
             dp_dateAdmis.SelectedDate = DateTime.Today;
+            // référence parent, variable globale
             Global.referenceExiste = false;
 
-            // récrupère les LITS disponibles (Occupé = 0 ou false) 
+            // récrupère les LITS disponibles (tblLits.occupe = 0 ou false) 
             var query = from temp in Login.myBDD.tblLits where temp.Occupe == false select temp;
             List<NorthernLightsHospital.tblLit> list_query = query.ToList();
 

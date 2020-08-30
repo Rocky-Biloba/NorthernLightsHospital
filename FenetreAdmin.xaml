@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NorthernLightsHospital"
         mc:Ignorable="d"
-        Title="Northern Lights Hospital - fenetre admin" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Northern Lights Hospital - fenetre admin" Height="450" Width="500" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -16,21 +16,44 @@
         </Grid.Background>
         <!--ID Admin-->
         <Label x:Name="lb_userID" Content="Admin : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF083825"/>
-        <TextBlock x:Name="tb_userID" HorizontalAlignment="Left" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="150" Foreground="#FF083825"/>
+        <TextBlock x:Name="tb_userID" HorizontalAlignment="Left" Margin="64,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="72" Foreground="#FF083825"/>
         <!--TITRE-->
-        <Label x:Name="lb_titreAdmin" Content="Ajouter et supprimer un médecin" HorizontalAlignment="Left" Margin="270,8,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
+        <Label x:Name="lb_titreAdmin" Content="Ajouter et supprimer un médecin" HorizontalAlignment="Left" Margin="161,16,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="2" Color="White"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="lb_listeMedecins" Content="Liste des médecins" HorizontalAlignment="Left" Margin="146,81,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
+        <Label x:Name="lb_listeMedecins" Content="Liste des médecins" HorizontalAlignment="Left" Margin="113,56,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
             <Label.Effect>
                 <DropShadowEffect ShadowDepth="2" Color="White"/>
             </Label.Effect>
         </Label>
-        <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="68,108,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="146,112,0,0" VerticalAlignment="Top" Width="60"  IsSynchronizedWithCurrentItem="True" DisplayMemberPath="IDmedecin">
-            <ComboBox x:Name="comboBox" Height="0" Width="35"/>
-        </ComboBox>
+
+        <!--<GroupBox x:Name="gb_listeMed" Header="Recherche médecin" HorizontalAlignment="Left" Height="162" Margin="15,57,0,0" VerticalAlignment="Top" Width="274">-->
+        <Label x:Name="lb_IDmedecin" Content="ID Médecin :" HorizontalAlignment="Left" Margin="60,83,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cb_IDmedecin" HorizontalAlignment="Left" Margin="141,83,0,0" VerticalAlignment="Top" Width="60" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="IDmedecin" SelectionChanged="cb_IDmedecin_SelectionChanged" Height="26"/>
+        <TextBlock x:Name="tb_erreur" HorizontalAlignment="Left" Margin="141,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="71" Width="157" Foreground="#FFFF0505"/>
+        <!--</GroupBox>-->
+
+        <Label x:Name="lb_ajouteMed" Content="Ajouter un médecin" HorizontalAlignment="Left" Margin="107,190,0,0" VerticalAlignment="Top" Foreground="#FF083825" FontWeight="Bold">
+            <Label.Effect>
+                <DropShadowEffect ShadowDepth="2" Color="White"/>
+            </Label.Effect>
+        </Label>
+
+        <!--<GroupBox x:Name="gb_infoMedecin" Header="Info médecin" HorizontalAlignment="Left" Height="170" Margin="36,216,0,0" VerticalAlignment="Top" Width="273">-->
+            <Label x:Name="lb_prenom" Content="Prénom :" HorizontalAlignment="Left" Margin="60,221,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="tbox_prenom" HorizontalAlignment="Left" Height="23" Margin="117,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+            <Label x:Name="lb_nom" Content="Nom :" HorizontalAlignment="Left" Margin="71,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.572,0.028"/>
+            <TextBox x:Name="tbox_nom" HorizontalAlignment="Left" Height="23" Margin="118,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+        <Label x:Name="lb_specialite" Content="Spécialité :" HorizontalAlignment="Left" Margin="47,280,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.572,0.028"/>
+        <ComboBox x:Name="cb_specialite" HorizontalAlignment="Left" Margin="118,280,0,0" VerticalAlignment="Top" Width="149" Height="26"/>
+        <!--</GroupBox>-->
+
+        <!--BUTTONS-->
+        <Button x:Name="btn_supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="316,77,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD"/>
+        <Button x:Name="btn_annuler" Content="Annuler" HorizontalAlignment="Left" Margin="316,147,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD"/>
+        <Button x:Name="btn_ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="316,215,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.949,0.203" Height="38" Background="#FFDEC8FD"/>
+
     </Grid>
 </Window>

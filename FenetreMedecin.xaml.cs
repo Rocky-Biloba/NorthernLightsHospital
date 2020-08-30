@@ -35,32 +35,6 @@ namespace NorthernLightsHospital
             btn_conge.IsEnabled = false;
             dp_conge.IsEnabled = false;
 
-            //// récrupère description du Lit
-            //var query = from temp in Login.myBDD.tblLits where temp.Occupe == false select temp;
-            //List<NorthernLightsHospital.tblLit> list_query = query.ToList();
-
-            //foreach (var i in list_query)
-            //{
-            //    string NewLine = i.Lit.ToString();
-
-            //    //Type
-            //    if (i.Type == 1)
-            //        NewLine += " | Standard      ";
-            //    else if (i.Type == 2)
-            //        NewLine += " | Semi privé";
-            //    else
-            //        NewLine += " | Privé         ";
-
-            //    //Department
-            //    if (i.IDdept == 1)
-            //        NewLine += " | Urgence";
-            //    else if (i.IDdept == 2)
-            //        NewLine += " | Réadaptation";
-            //    else
-            //        NewLine += " | Chirugier";
-
-            //    cb_choixLit.Items.Add(NewLine);
-            //}
         }
 
         // RECHERHER PATIENT (NAS)
@@ -182,7 +156,7 @@ namespace NorthernLightsHospital
                 {
                     Login.myBDD.SaveChanges();
 
-                    MessageBox.Show("Patient " + nasPatient + " congédié le : " + releaseDate,
+                    MessageBox.Show("Patient " + nasPatient + " congédié le : " + releaseDate.ToString("YYYY MM DD"),
                     "Attention", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception f)

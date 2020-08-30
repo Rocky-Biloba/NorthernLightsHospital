@@ -35,17 +35,19 @@ namespace NorthernLightsHospital
             {
                 if (user == "prepose" && pass == "prepose")
                 {
+                    // PREPOSE
                     MainWindow main = new MainWindow();
                     main.ShowDialog();
                 }
                 if (user == "admin" && pass == "admin")
                 {
-                        //changer MenuPrepose à MenuAdmin
-                    MenuPrepose main = new MenuPrepose();
+                    // ADMIN
+                    FenetreAdmin main = new FenetreAdmin();
                     main.ShowDialog();
                 }
                 if (user == "medecin" && pass == "medecin")
                 {
+                    // MEDECIN
                     FenetreMedecin main = new FenetreMedecin();
                     main.ShowDialog();
                 }
@@ -75,7 +77,7 @@ namespace NorthernLightsHospital
         private void btn_Annuler_Click(object sender, RoutedEventArgs e)
         {
             // On s'assure que c'est bien l'intention de l'utilisateur de quitter l'application
-            MessageBoxResult reponse = MessageBox.Show("Désirez-vous réellement quitter cette application ? ", "Attention!",
+            MessageBoxResult reponse = MessageBox.Show("Désirez-vous fermer cette application ? ", "Attention!",
             MessageBoxButton.YesNo, MessageBoxImage.Question);
             // Si tel est le cas, on met fin à l'application.
             if (reponse == MessageBoxResult.Yes)
